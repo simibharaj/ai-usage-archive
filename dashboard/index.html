@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Odometer (sample data)</title>
+<style>body{font-family:Georgia,serif;background:#fafaf7;color:#1b1b1b;margin:0;padding:2rem 1rem}
+main{max-width:760px;margin:0 auto}h1{font-size:2rem;margin:0 0 .25rem}p.sub{color:#555;font-family:-apple-system,Segoe UI,sans-serif;margin:0 0 1.5rem}
+.banner{background:#fff4d6;border:1px solid #e6cf86;padding:.6rem .9rem;border-radius:6px;font:14px -apple-system,Segoe UI,sans-serif;margin-bottom:1.5rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:2rem}
+.card{background:#fff;border:1px solid #e5e5df;border-radius:10px;padding:1rem}.card .n{font-size:2rem;font-weight:700}.card .l{font:13px -apple-system,Segoe UI,sans-serif;color:#555;text-transform:uppercase;letter-spacing:.04em}
+table{width:100%;border-collapse:collapse;font:14px -apple-system,Segoe UI,sans-serif;background:#fff}th,td{text-align:left;padding:.6rem;border-bottom:1px solid #eee}td.num{text-align:right;font-variant-numeric:tabular-nums}</style></head>
+<body><main><h1>AI Odometer</h1><p class="sub">How much AI work, across which platforms, with honest gaps.</p>
+<div class="banner">Sample data for demonstration. These are not real usage numbers.</div>
+<div class="grid" id="cards"></div>
+<table><thead><tr><th>Metric</th><th>Number</th><th>Status</th><th>Explanation</th></tr></thead><tbody id="rows"></tbody></table></main>
+<script>const DATA=[{"Metric": "Prompts counted", "Number": "1200", "Status": "Sample", "Explanation": "Example number for the demo. Replace with your own."}, {"Metric": "Conversations archived", "Number": "85", "Status": "Sample", "Explanation": "Example number for the demo."}, {"Metric": "Platforms covered", "Number": "5", "Status": "Sample", "Explanation": "ChatGPT / Claude / Gemini / Perplexity / Polar"}, {"Metric": "Projects with evidence", "Number": "6", "Status": "Sample", "Explanation": "Example number for the demo."}, {"Metric": "Lanes in development", "Number": "4", "Status": "Sample", "Explanation": "Example number for the demo."}, {"Metric": "Gemini", "Number": "Unavailable", "Status": "Unavailable", "Explanation": "Shown when a platform could not be read. No guessing."}];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const isNum=v=>/^\d+$/.test(v);
+document.getElementById("cards").innerHTML=DATA.filter(r=>isNum(r.Number)).slice(0,3).map(r=>`<div class="card"><div class="n">${Number(r.Number).toLocaleString()}</div><div class="l">${esc(r.Metric)}</div></div>`).join("");
+document.getElementById("rows").innerHTML=DATA.map(r=>`<tr><td>${esc(r.Metric)}</td><td class="num">${esc(r.Number)}</td><td>${esc(r.Status)}</td><td>${esc(r.Explanation)}</td></tr>`).join("");
+</script></body></html>

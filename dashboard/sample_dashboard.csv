@@ -1,0 +1,7 @@
+Metric,Number,Status,Explanation
+Prompts counted,1200,Sample,Example number for the demo. Replace with your own.
+Conversations archived,85,Sample,Example number for the demo.
+Platforms covered,5,Sample,ChatGPT / Claude / Gemini / Perplexity / Polar
+Projects with evidence,6,Sample,Example number for the demo.
+Lanes in development,4,Sample,Example number for the demo.
+Gemini,Unavailable,Unavailable,Shown when a platform could not be read. No guessing.
